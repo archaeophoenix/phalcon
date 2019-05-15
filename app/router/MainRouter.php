@@ -30,12 +30,12 @@ class MainRouter extends Group {
     $this->add('/users/{}', ['action' => 'index']);
 
     $this->add('/users/form', ['action' => 'form']);
-    $this->add('/users/form/{}', ['action' => 'form']);
+    $this->add('/users/form/{id}', ['action' => 'form']);
 
     $this->add('/users/create', ['action' => 'create']);
-    $this->add('/users/create/{}', ['action' => 'create']);
+    $this->add('/users/create/{id}', ['action' => 'create']);
 
-    $this->add('/users/delete/{}', ['action' => 'delete']);
+    $this->add('/users/delete/{id}', ['action' => 'delete']);
 
   }
 

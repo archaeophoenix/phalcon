@@ -19,7 +19,7 @@ function direct(url = ''){
 
 function usersTag(data){
   // console.log(data);
-  return '<tr><td class="text-center">' + data.id + '</td><td>' + data.name + '</td><td>' + data.email + '</td><td class="text-center"><a class="btn btn-sm btn-outline-info" title="Edit" onclick="direct(' + "'" + 'users/form/?id=' + data.id + "'" + ');">📝</a><a class="btn btn-sm btn-outline-dark" title="Delete" onclick="direct(' + "'" + 'users/delete/?id=' + data.id + "'" + ');">🗑</a></td></tr>';
+  return '<tr><td class="text-center">' + data.id + '</td><td>' + data.name + '</td><td>' + data.email + '</td><td class="text-center"><a class="btn btn-sm btn-outline-info" title="Edit" onclick="direct(' + "'" + 'users/form/' + data.id + "'" + ');">📝</a><a class="btn btn-sm btn-outline-dark" title="Delete" onclick="direct(' + "'" + 'users/delete/' + data.id + "'" + ');">🗑</a></td></tr>';
 }
 
 async function users(page = null){

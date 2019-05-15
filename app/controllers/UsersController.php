@@ -39,17 +39,17 @@ class UsersController extends ControllerBase {
 
   function formAction(){
     $action = 'users/create/';
-    $id = $this->request->getQuery('id', 'int');
+    $id = $this->dispatcher->getParam('id');
 
-    $data['action'] = (empty($id)) ? $action : $action . '?id=' . $id ;
+    $data['action'] = (empty($id)) ? $action : $action . $id ;
     $data['users'] = (empty($id)) ? [] : Users::findFirstById($id);
 
     $this->view->setVars($data);
   }
 
-  function deleteAction($id){
+  function deleteAction(){
     $this->view->disable();
-    $id = $this->request->getQuery('id', 'int');
+    $id = $this->dispatcher->getParam('id');
 
     echo $id;
 
@@ -60,7 +60,7 @@ class UsersController extends ControllerBase {
 
   function createAction(){
     $this->view->disable();
-    $id = $this->request->getQuery('id', 'int');
+    $id = $this->dispatcher->getParam('id');
 
     $users = (empty($id)) ? new Users() : Users::findFirstById($id);
     $flash = (empty($id)) ? 'saved.' : 'updated.';
